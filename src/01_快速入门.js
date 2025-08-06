@@ -8,6 +8,6 @@ app.use((ctx) => {
     ctx.body = 'hello koa2'
 })
 // 四、启动服务,监听4000端口
-app.listen(4000, () => {
-    console.log('server is running on http://localhost:4000')
+app.listen(4001, () => {
+    console.log('server is running on http://localhost:4001')
 })
