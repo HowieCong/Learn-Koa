@@ -39,8 +39,9 @@ src/
     05_koa处理异步数据.js     # Handling asynchronous data
     06_路由.js               # Basic routing
     07_koa-router.js         # Advanced routing with koa-router and koa-body
-    async.js
-    await.js
+    08_错误处理.js           # Error handling in Koa
+    async.js                 # async/await demo
+    await.js                 # await demo
     router/
         user.route.js        # User routes for RESTful API demo
 ```
@@ -112,6 +113,38 @@ Visit: [http://localhost:4007/users](http://localhost:4007/users)
 - Supports GET `/users?start=18&end=20` for user list filtering
 - Supports GET `/users/:id` for user detail
 - Supports POST `/users` for user creation (see code for details)
+
+#### 8. Error Handling
+
+```bash
+node src/08_错误处理.js
+```
+
+Demonstrates how to handle errors globally in Koa.
+
+#### 9. async/await Demos
+
+```bash
+node src/async.js
+node src/await.js
+```
+
+Showcases how to use async/await in Koa middleware.
+
+#### 10. Custom Router
+
+The `src/router/user.route.js` file contains user-related RESTful API routes, which are imported and used in `07_koa-router.js`.
+
+---
+
+### Learning Suggestions
+
+- Read the comments in each example file (bilingual: English & Chinese).
+- Try modifying the middleware and routes to deepen your understanding.
+- Explore the official [Koa documentation](https://koajs.com/) for more advanced features.
+- For TypeScript users, refer to Koa's official type definitions.
+
+---
 
 ### Development Tools
 

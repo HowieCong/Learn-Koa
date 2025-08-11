@@ -39,8 +39,9 @@ src/
     05_koa处理异步数据.js     # 处理异步数据
     06_路由.js               # 基础路由
     07_koa-router.js         # 进阶路由（koa-router + koa-body）
-    async.js
-    await.js
+    08_错误处理.js           # Koa 错误处理
+    async.js                 # async/await 示例
+    await.js                 # await 示例
     router/
         user.route.js        # 用户路由，RESTful API 示例
 ```
@@ -112,6 +113,38 @@ node src/07_koa-router.js
 - 支持 GET `/users?start=18&end=20` 用户列表筛选
 - 支持 GET `/users/:id` 用户详情
 - 支持 POST `/users` 创建用户（详见代码）
+
+#### 8. 错误处理
+
+```bash
+node src/08_错误处理.js
+```
+
+演示如何在 Koa 中进行全局错误处理。
+
+#### 9. async/await 示例
+
+```bash
+node src/async.js
+node src/await.js
+```
+
+展示如何在 Koa 中使用 async/await。
+
+#### 10. 自定义路由
+
+`src/router/user.route.js` 文件包含用户相关 RESTful API 路由，已在 `07_koa-router.js` 中引入使用。
+
+---
+
+### 学习建议
+
+- 阅读每个示例文件中的中英文注释，理解每一步的作用。
+- 尝试修改中间件和路由，加深对 Koa 工作原理的理解。
+- 推荐查阅 [Koa 官方文档](https://koajs.com/) 获取更多进阶内容。
+- TypeScript 用户可参考 Koa 官方类型定义。
+
+---
 
 ### 开发辅助
 
