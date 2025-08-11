@@ -1,10 +1,30 @@
 # Learn-KOA
 
-Language : [🇺🇸 English](./README.md) | [🇨🇳 中文](./README.zh-CN.md)
+Language : [🇺🇸 English] | [🇨🇳 中文](./README.zh-CN.md)
 
 ## English
 
 This project is for learning the basics and advanced usage of the [Koa](https://koajs.com/) framework, suitable for beginners and those who want to deepen their understanding.
+
+---
+
+### Koa2 vs Koa3: Main Differences
+
+| Feature              | Koa2                                  | Koa3 (latest)                   |
+| -------------------- | ------------------------------------- | ------------------------------- |
+| Node.js Version      | Requires Node.js >= 7.6 (async/await) | Requires Node.js >= 16          |
+| Middleware Signature | `async (ctx, next)`                   | `async (ctx, next)` (unchanged) |
+| Middleware Compose   | Uses `koa-compose` internally         | Uses `@koajs/compose`           |
+| Error Handling       | Manual `try/catch` in middleware      | Improved error propagation      |
+| Context Extension    | Directly on `ctx`                     | Same, but with stricter typings |
+| Typescript Support   | Community maintained                  | Official TypeScript typings     |
+| Package Name         | `koa`                                 | `koa` (v3.x.x)                  |
+| Breaking Changes     | Some plugins may not be compatible    | Some APIs and plugins updated   |
+
+**Summary:**  
+Koa3 requires a newer Node.js version, has better TypeScript support, and some internal improvements. Most middleware usage remains the same, but always check plugin compatibility.
+
+---
 
 ### Project Structure
 

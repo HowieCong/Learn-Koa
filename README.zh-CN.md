@@ -1,10 +1,30 @@
 # Learn-KOA
 
-Language : [🇺🇸 English](./README.md) | [🇨🇳 中文](./README.zh-CN.md)
+Language : [🇺🇸 English](./README.md) | [🇨🇳 中文]
 
 ## 中文
 
 本项目用于学习 [Koa](https://koajs.com/) 框架的基本用法和进阶技巧，适合初学者和进阶者快速上手。
+
+---
+
+### Koa2 与 Koa3 主要区别
+
+| 特性             | Koa2                                  | Koa3（最新版）                |
+| ---------------- | ------------------------------------- | ----------------------------- |
+| Node.js 版本要求 | 需 Node.js >= 7.6（支持 async/await） | 需 Node.js >= 16              |
+| 中间件签名       | `async (ctx, next)`                   | `async (ctx, next)`（无变化） |
+| 中间件组合       | 内部用 `koa-compose`                  | 内部用 `@koajs/compose`       |
+| 错误处理         | 需在中间件手动 `try/catch`            | 错误传递机制更完善            |
+| Context 扩展     | 直接扩展 `ctx`                        | 相同，但类型更严格            |
+| TypeScript 支持  | 社区维护                              | 官方内置类型声明              |
+| 包名             | `koa`                                 | `koa`（v3.x.x）               |
+| 兼容性           | 部分插件可能不兼容                    | 部分 API 和插件有更新         |
+
+**总结：**  
+Koa3 需要更高版本 Node.js，TypeScript 支持更好，内部机制有优化。大部分中间件用法不变，但需注意插件兼容性。
+
+---
 
 ### 目录结构
 
@@ -111,4 +131,4 @@ npx nodemon src/01_快速入门.js
 
 ---
 
-如需更多 Koa 相关资料，请参考 [Koa 官方文档](https://koajs.com/)。
+如需更多 Koa 相关资料，请参考 [Koa 官方文档](https://koajs.com/)
