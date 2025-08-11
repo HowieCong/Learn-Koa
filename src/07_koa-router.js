@@ -9,6 +9,12 @@ app.use(koaBody());
 const userRoute = require('./router/user.route')
 // 四、注册中间件
 app.use( userRoute.routes()).use( userRoute.allowedMethods()) // 处理404和405
+
+app.on('error', (err, ctx) => {
+    console.error(err);
+    ctx.body = err
+});
+
 // 四、启动服务,监听4007端口
 app.listen(4007, () => {
     console.log('server is running on http://localhost:4007')
