@@ -43,11 +43,13 @@ router.post('/', (ctx) => {
 router.get('/:id/article/:aid',(ctx) => {
     console.log(ctx.params)
     // 没有通过ctx.body返回数据时，默认koa返回404错误
+    // console.log(aaa)
     // ctx.body = { id: 1, title: '文章1', content: '这是文章1的内容' }
     if(false){
         ctx.body = { id: 1, title: '文章1', content: '这是文章1的内容' }
     }else{
-        return ctx.app.emit('error', { code: 404, message: '资源未找到', ctx })
+        // return ctx.app.emit('error', { code: 404, message: '资源未找到', ctx })
+        ctx.throw(422, '参数格式不正确')
     }
 })
 

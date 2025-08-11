@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/08_错误处理.js",
+    "prod": "cross-env NODE_ENV=production node src/08_错误处理.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "koa": "^3.0.1",
     "koa-body": "^6.0.1",
+    "koa-json-error": "^3.1.2",
     "koa-router": "^13.1.1"
   },
   "devDependencies": {
