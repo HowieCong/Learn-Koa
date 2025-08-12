@@ -1,27 +1,44 @@
-// 需求
-// 1.在middleware1中,构造一个message=aa
-// 2.在middleware2中,同步追加bb
-// 3.在middleware3中,异步追加cc
-
-// 一.导入Koa
+// 1. Import Koa
+// 1. 导入Koa
 const Koa = require('koa');
-// 二.实例化app对象
+
+// 2. Create app instance
+// 2. 实例化app对象
 const app = new Koa();
-// 三、编写中间件
-app.use((ctx,next) => {
-    ctx.message = 'aa'
-    // ctx.body = ctx.message;
-    next()
+
+// 3. Register middleware
+// 3. 注册中间件
+
+app.use((ctx, next) => {
+    // Initialize message with 'aa'
+    // 初始化message为'aa'
+    ctx.message = 'aa';
+    // Call next middleware
+    // 调用下一个中间件
+    next();
+    // Set response body after all middlewares have executed
+    // 在所有中间件执行完后设置响应体
     ctx.body = ctx.message;
-})
-app.use((ctx,next) => {
-    ctx.message += 'bb'
-    next()
-})
-app.use((ctx) => {
+});
+
+app.use((ctx, next) => {
+    // Synchronously append 'bb' to message
+    // 同步追加'bb'到message
+    ctx.message += 'bb';
+    // Call next middleware
+    // 调用下一个中间件
+    next();
+});
+
+app.use(async (ctx) => {
+    // Asynchronously append 'cc' to message
+    // 异步追加'cc'到message
+    await new Promise(resolve => setTimeout(resolve, 100)); // Simulate async operation // 模拟异步操作
     ctx.message += 'cc';
-})
-// 四、启动服务,监听4004端口
+});
+
+// 4. Start server on port 4004
+// 4. 启动服务,监听4004端口
 app.listen(4004, () => {
-    console.log('server is running on http://localhost:4004')
-})
+    console.log('server is running on http://localhost:4004');
+});
