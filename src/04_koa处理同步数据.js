@@ -1,3 +1,13 @@
+// Requirements
+// 1. In middleware1, construct a message = 'aa'
+// 2. In middleware2, synchronously append 'bb'
+// 3. In middleware3, asynchronously append 'cc'
+
+// 需求
+// 1.在middleware1中,构造一个message=aa
+// 2.在middleware2中,同步追加bb
+// 3.在middleware3中,异步追加cc
+
 // 1. Import Koa
 // 1. 导入Koa
 const Koa = require('koa');
