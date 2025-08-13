@@ -17,7 +17,7 @@ This project is for learning the basics and advanced usage of the [Koa](https://
 | Middleware Compose   | Uses `koa-compose` internally         | Uses `@koajs/compose`           |
 | Error Handling       | Manual `try/catch` in middleware      | Improved error propagation      |
 | Context Extension    | Directly on `ctx`                     | Same, but with stricter typings |
-| Typescript Support   | Community maintained                  | Official TypeScript typings     |
+| TypeScript Support   | Community maintained                  | Official TypeScript typings     |
 | Package Name         | `koa`                                 | `koa` (v3.x.x)                  |
 | Breaking Changes     | Some plugins may not be compatible    | Some APIs and plugins updated   |
 
@@ -51,6 +51,11 @@ src/
 ```bash
 npm install
 ```
+
+### Scripts
+
+- `npm run dev` — Start with nodemon for development (auto-reload, runs `src/08_错误处理.js`)
+- `npm run prod` — Start in production mode (uses `cross-env` to set `NODE_ENV=production`)
 
 ### Run Examples
 
@@ -160,6 +165,8 @@ npx nodemon src/01_快速入门.js
 - koa ^3.0.1
 - koa-router ^13.1.1
 - koa-body ^6.0.1
+- koa-json-error ^3.1.2
+- cross-env ^7.0.3
 - nodemon (dev dependency)
 
 ---

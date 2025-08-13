@@ -52,6 +52,11 @@ src/
 npm install
 ```
 
+### 脚本命令
+
+- `npm run dev` — 使用 nodemon 启动开发环境（自动重载，运行 `src/08_错误处理.js`）
+- `npm run prod` — 生产环境启动（用 cross-env 设置 `NODE_ENV=production`）
+
 ### 运行示例
 
 #### 1. 快速入门
@@ -160,6 +165,8 @@ npx nodemon src/01_快速入门.js
 - koa ^3.0.1
 - koa-router ^13.1.1
 - koa-body ^6.0.1
+- koa-json-error ^3.1.2
+- cross-env ^7.0.3
 - nodemon (开发依赖)
 
 ---
