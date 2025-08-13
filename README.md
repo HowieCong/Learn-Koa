@@ -2,27 +2,45 @@
 
 Language : [🇺🇸 English] | [🇨🇳 中文](./README.zh-CN.md)
 
-## English
+---
 
-This project is for learning the basics and advanced usage of the [Koa](https://koajs.com/) framework, suitable for beginners and those who want to deepen their understanding.
+## English Documentation
+
+This project is for learning the basics and advanced usage of the [Koa](https://koajs.com/) framework, suitable for both beginners and advanced users.
 
 ---
 
-### Koa2 vs Koa3: Main Differences
+## Highlights
 
-| Feature              | Koa2                                  | Koa3 (latest)                   |
-| -------------------- | ------------------------------------- | ------------------------------- |
-| Node.js Version      | Requires Node.js >= 7.6 (async/await) | Requires Node.js >= 16          |
-| Middleware Signature | `async (ctx, next)`                   | `async (ctx, next)` (unchanged) |
-| Middleware Compose   | Uses `koa-compose` internally         | Uses `@koajs/compose`           |
-| Error Handling       | Manual `try/catch` in middleware      | Improved error propagation      |
-| Context Extension    | Directly on `ctx`                     | Same, but with stricter typings |
-| TypeScript Support   | Community maintained                  | Official TypeScript typings     |
-| Package Name         | `koa`                                 | `koa` (v3.x.x)                  |
-| Breaking Changes     | Some plugins may not be compatible    | Some APIs and plugins updated   |
+- **Bilingual Comments**: All example files include detailed comments in both English and Chinese, making it easy for developers from different backgrounds to understand.
+- **Step-by-Step Examples**: Each key concept (middleware, routing, error handling, async, etc.) is demonstrated in a separate file, allowing you to learn and test incrementally.
+- **Covers Latest Koa3 Features**: Examples are based on Koa3, covering official best practices and common middleware, compatible with Node.js 16+, and including TypeScript support notes.
+- **Practical RESTful API Demo**: Built-in user route examples show how to build RESTful APIs with Koa.
+- **Developer Friendly**: Supports `nodemon` for automatic reloads, and provides simple development scripts.
 
-**Summary:**  
-Koa3 requires a newer Node.js version, has better TypeScript support, and some internal improvements. Most middleware usage remains the same, but always check plugin compatibility.
+---
+
+## Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/HowieCong/Learn-KOA.git
+   cd Learn-KOA
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Run any example (e.g., Quick Start)**
+   ```bash
+   node src/01_快速入门.js
+   # Visit http://localhost:4001 in your browser
+   ```
+4. **Recommended development mode (auto-reload)**
+   ```bash
+   npm run dev
+   # By default runs src/08_错误处理.js; you can modify the script in package.json or specify another file directly
+   ```
 
 ---
 
@@ -46,16 +64,36 @@ src/
         user.route.js        # User routes for RESTful API demo
 ```
 
-### Install Dependencies
+---
 
-```bash
-npm install
-```
+### Dependencies
+
+- koa ^3.0.1
+- koa-router ^13.1.1
+- koa-body ^6.0.1
+- koa-json-error ^3.1.2
+- cross-env ^7.0.3
+- nodemon (dev dependency)
+
+---
 
 ### Scripts
 
 - `npm run dev` — Start with nodemon for development (auto-reload, runs `src/08_错误处理.js`)
 - `npm run prod` — Start in production mode (uses `cross-env` to set `NODE_ENV=production`)
+
+---
+
+### Development Tools
+
+You can use `nodemon` for automatic restarts:
+
+```bash
+npx nodemon src/01_快速入门.js
+# or any other example file
+```
+
+---
 
 ### Run Examples
 
@@ -142,6 +180,24 @@ The `src/router/user.route.js` file contains user-related RESTful API routes, wh
 
 ---
 
+### Koa2 vs Koa3: Main Differences
+
+| Feature              | Koa2                                  | Koa3 (latest)                   |
+| -------------------- | ------------------------------------- | ------------------------------- |
+| Node.js Version      | Requires Node.js >= 7.6 (async/await) | Requires Node.js >= 16          |
+| Middleware Signature | `async (ctx, next)`                   | `async (ctx, next)` (unchanged) |
+| Middleware Compose   | Uses `koa-compose` internally         | Uses `@koajs/compose`           |
+| Error Handling       | Manual `try/catch` in middleware      | Improved error propagation      |
+| Context Extension    | Directly on `ctx`                     | Same, but with stricter typings |
+| TypeScript Support   | Community maintained                  | Official TypeScript typings     |
+| Package Name         | `koa`                                 | `koa` (v3.x.x)                  |
+| Breaking Changes     | Some plugins may not be compatible    | Some APIs and plugins updated   |
+
+**Summary:**  
+Koa3 requires a newer Node.js version, has better TypeScript support, and some internal improvements. Most middleware usage remains the same, but always check plugin compatibility.
+
+---
+
 ### Learning Suggestions
 
 - Read the comments in each example file (bilingual: English & Chinese).
@@ -151,23 +207,23 @@ The `src/router/user.route.js` file contains user-related RESTful API routes, wh
 
 ---
 
-### Development Tools
+## Contribution Guide
 
-You can use `nodemon` for automatic restarts:
+Contributions are welcome!
 
-```bash
-npx nodemon src/01_快速入门.js
-# or any other example file
-```
+**You can:**
 
-### Dependencies
+- Add new Koa example files (such as advanced middleware, routing, error handling, etc.)
+- Improve existing code or comments (including English/Chinese translation, code style, etc.)
+- Fix errors in documentation or code
 
-- koa ^3.0.1
-- koa-router ^13.1.1
-- koa-body ^6.0.1
-- koa-json-error ^3.1.2
-- cross-env ^7.0.3
-- nodemon (dev dependency)
+**Contribution process:**
+
+1. Fork this repository
+2. Create a new branch for your changes
+3. Submit a PR and briefly describe your changes
+
+I will review and merge valuable contributions promptly. Thank you for your support!
 
 ---
 
